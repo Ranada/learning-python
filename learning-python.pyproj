@@ -20,10 +20,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="udemy-one-week-python\4-23-magic-trick\magic_trick_starter.py" />
+    <Compile Include="udemy-one-week-python\6-34-string-basics\String_Basics_Starter.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="udemy-one-week-python\" />
     <Folder Include="udemy-one-week-python\4-23-magic-trick" />
+    <Folder Include="udemy-one-week-python\6-34-string-basics\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
 </Project>
