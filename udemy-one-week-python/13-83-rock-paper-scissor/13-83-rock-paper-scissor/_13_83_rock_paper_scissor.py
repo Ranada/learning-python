@@ -38,7 +38,7 @@ computer_move = getComputerMove(num)
 
 
 # Ask a user to enter their move
-user_entry = input("What is your move? ")
+user_entry = input("What is your move? ").lower()
 
 # Print the rock, paper, or scissors ASCII art that corresponds to the player's move
 def getUserMove(user_entry):
@@ -59,17 +59,16 @@ print()
 
 
 # Figure out who wins and print the result!
+if user_move == computer_move: print("Draw!")
+
 if user_move == rock:
-    if computer_move == rock: print("Draw!")
     if computer_move == paper: print("Computer wins!")
     if computer_move == scissors: print("You win!")
 
 if user_move == paper:
     if computer_move == rock: print("You win!")
-    if computer_move == paper: print("Draw!")
     if computer_move == scissors: print("Computer wins!")
 
 if user_move == scissors:
     if computer_move == rock: print("Computer wins!")
     if computer_move == paper: print("You win!")
-    if computer_move == scissors: print("Draw!")
