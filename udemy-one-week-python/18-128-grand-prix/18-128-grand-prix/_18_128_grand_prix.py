@@ -28,9 +28,8 @@ drivers.remove("Blue")
 
 # My dog, Elton, is making a remarkable charge up the leadboard! Remove Elton from his current position in the list and insert him at index 2.
 for index, driver in enumerate(drivers):
-    if driver == "Elton":
-        move = drivers.pop(index)
-        drivers.insert(2, move)
+    drivers.remove("Elton")
+    drivers.insert(2, "Elton")
 #print(drivers)
 
 # The race is over! It's time for the podium ceremony.  Create a new list called podium that contains the first 3 elements from the drivers list. (use a slice!)
