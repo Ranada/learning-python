@@ -8,20 +8,30 @@ def print_header():
     """
     print(header)
 
+def print_todos(todos):
+    for i, todo in enumerate(todos):
+        print(f"{i + 1}) {todo}")
+
+def print_completed(completed_todos):
+    print(f"You completed {len(completed_todos)} tasks.")
+    for todo in completed_todos:
+        print(f"* {todo}")
 
 def create_todos():
     todos = []
-    completed = []
+    completed_todos = []
     divider = "*" * 100
     print(divider)
-    entry = input("Enter a command. Type 'h' for help:\n")
-
-    if entry == 'q' or entry == 'quit':
-        print("Print completed todos here.")
-        return
+    entry = ''
 
     while entry != 'q' or entry != 'quit':
+        entry = input("Enter a command. Type 'h' for help:\n")
+        if entry == 'q' or entry == 'quit':
+            print("Print completed todos here.")
+            print_completed(completed_todos)
+            return
         todos.append(entry)
+        print_todos(todos)
 
 print_header();
 create_todos()
