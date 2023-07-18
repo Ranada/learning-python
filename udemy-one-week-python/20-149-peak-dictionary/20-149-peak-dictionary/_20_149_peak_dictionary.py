@@ -26,7 +26,7 @@ peak["summit_log"].append("Neil")
 
 # Let's rename "height" to "elevation":
 # Remove "height" from the dict and store the result in a variable.
-elevation = peak["height"]
+elevation = peak.pop("height")
 
 # Use the value for "height" and store it in the dict under they key "elevation"
 peak["elevation"] = elevation
@@ -46,7 +46,7 @@ for k, v in peak.items():
     print(k, "->", v)
 
 # A huge earthquake/meteor/forestfire/tsunami has destroyed the peak.  Please empty out the entire dictionary.
-peak.clear()
+#peak.clear()
 
 print("\nPeak dictionary:\n", peak)
 
