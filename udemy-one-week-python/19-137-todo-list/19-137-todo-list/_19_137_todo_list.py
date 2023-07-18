@@ -14,10 +14,13 @@ def print_todos(todos):
     print()
 
 def print_completed(completed):
-    print(f"You completed {len(completed)} tasks:")
-    for todo in completed:
-        print(f"* {todo}")
-    print()
+    if completed:
+        print(f"Good job! You completed {len(completed)} tasks:")
+        for todo in completed:
+            print(f"* {todo}")
+        print()
+    else:
+        print("Leaving the app. No tasks completed.")
 
 def print_help_menu():
     menu = """
@@ -37,13 +40,15 @@ def create_todos():
     while entry != 'q' or entry != 'quit':
         print(divider)
         entry = input("Enter a command. Type 'h' for help:\n")
-        if ord(entry[0]) >= ord('0') and ord(entry[0]) <= ord('9'):
+        if entry.isnumeric():
             num = int(entry) - 1
-            task = todos.pop(num)
-            completed.append(task)
+            if num >= len(todos):
+                print("OOPS! That number is outside the range of tasks. Try again.")
+            else:
+                task = todos.pop(num)
+                completed.append(task)
         elif entry == 'h':
             print_help_menu()
-            continue
         elif entry == 'q' or entry == 'quit':
             print_completed(completed)
             return
