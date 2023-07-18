@@ -8,10 +8,7 @@
 
 print('='*10, "PART 1", '='*10)
 def contains_pickle(*args):
-    if "pickle" in args:
-        return True
-    else:
-        return False
+    return "pickle" in args
 
 print(contains_pickle("red", 45, "pickle", []))
 print(contains_pickle(1,2, "blue"))
